@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove, reset } from "../store/cartSlice";
 import { message } from "antd";
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -26,19 +26,19 @@ const Cart = () => {
 
   const handleCreateOrder = async () => {
     try {
-      const res = await axios.post('/api/v1/create/order', {
+      const res = await axios.post("/api/v1/create/order", {
         items: items,
+        total: total,
       });
       if (res.data.success === true) {
-        navigate('/');
-        dispatch(reset())
-        message.success('Ordered Successfully');
+        navigate("/");
+        dispatch(reset());
+        message.success("Ordered Successfully");
       }
     } catch (error) {
-      console.log('Error in creating Order');
+      console.log("Error in creating Order");
     }
-  }
-
+  };
 
   useEffect(() => {
     setTotal(getTotalAmount());
@@ -49,10 +49,16 @@ const Cart = () => {
         <div className="m-10">
           <p className="text-xl font-semibold">Checkout</p>
 
-                  <p className="px-10 py-3 font-normal">Cart Value : {total}</p>
-                  <button className="btn btn-success" onClick={()=> handleCreateOrder()}> Confirm Order</button>
+          <p className="px-10 py-3 font-normal">Cart Value : {total}</p>
+          <button
+            className="btn btn-success"
+            onClick={() => handleCreateOrder()}
+          >
+            {" "}
+            Confirm Order
+          </button>
         </div>
-        <div className="m-5 max-w-3xl ">
+        <div className="md:mx-80 ">
           {items.map((item) => {
             return (
               <div className="card m-2 flex-col justify-center md:flex-row  md:justify-between">

@@ -18,19 +18,20 @@ const Navbar = () => {
         Zomato Lite
       </span>
       <div>
-        <Link className="navLink mx-5 " to="/">
+        <Link className="navLink mr-5 " to="/">
           Home
         </Link>
-        <Link className="navLink mx-5 " to="/cart">
+        <Link className="navLink mr-5 ml-5" to="/cart">
           <Badge
             count={items.length}
             className="font-semi-bold"
             offset={[15, -1]}
             size="12px"
-          >Cart
+          >
+            Cart
           </Badge>
         </Link>
-        <Link className="navLink mx-5 " to="/orders">
+        <Link className="navLink mr-5 ml-5 " to="/orders">
           Orders
         </Link>
         {/* <span className="cartCount mx-5">Cart items: {items.length}</span> */}
