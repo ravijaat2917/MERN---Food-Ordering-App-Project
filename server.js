@@ -21,17 +21,19 @@ connectDB(process.env.DATABASE_URL);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// app.use(express.static(path.join(__dirname, "./frontend/build")));
-
-// app.use("*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
-// });
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 
 // Routes
 app.use("/api/v1", orderRoutes);
 
+app.use("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
+});
+
+//PORT
+const PORT = process.env.PORT || 8080;
+
 // Listen Port
-app.listen(8080, () => {
-  console.log(`Server Listening on Port 8080`);
+app.listen(PORT, () => {
+  console.log(`Server Listening on Port ${PORT}`);
 });
