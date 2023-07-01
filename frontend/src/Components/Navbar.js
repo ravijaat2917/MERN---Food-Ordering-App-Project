@@ -15,7 +15,7 @@ const Navbar = () => {
       }}
     >
       <span className="logo md:py-0 pb-7 text-4xl font-bold text-red-600 ">
-        Zomato Lite
+        Let's Order Something Tasty
       </span>
       <div >
         <hr/>

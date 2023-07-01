@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import Homepage from "./pages/Homepage";
 import Cart from "./pages/Cart";
 import OrdersPage from "./pages/OrdersPage";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/orders" element={<OrdersPage />} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </Provider>
     </div>
