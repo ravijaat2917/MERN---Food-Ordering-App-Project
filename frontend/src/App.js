@@ -5,6 +5,7 @@ import store from "./store/store";
 import Navbar from "./Components/Navbar";
 import Homepage from "./pages/Homepage";
 import Cart from "./pages/Cart";
+import OrdersPage from "./pages/OrdersPage";
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/orders" element={<OrdersPage/>}/>
+            
           </Routes>
         </BrowserRouter>
       </Provider>

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { remove } from "../store/cartSlice";
+import { remove, reset } from "../store/cartSlice";
 import { message } from "antd";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart);
   const [total, setTotal] = useState(0);
@@ -20,6 +23,23 @@ const Cart = () => {
     }
     return t;
   };
+
+  const handleCreateOrder = async () => {
+    try {
+      const res = await axios.post('/api/v1/create/order', {
+        items: items,
+      });
+      if (res.data.success === true) {
+        navigate('/');
+        dispatch(reset())
+        message.success('Ordered Successfully');
+      }
+    } catch (error) {
+      console.log('Error in creating Order');
+    }
+  }
+
+
   useEffect(() => {
     setTotal(getTotalAmount());
   }, [items]);
@@ -30,7 +50,7 @@ const Cart = () => {
           <p className="text-xl font-semibold">Checkout</p>
 
                   <p className="px-10 py-3 font-normal">Cart Value : {total}</p>
-                  <button className="btn btn-success"> Confirm Order</button>
+                  <button className="btn btn-success" onClick={()=> handleCreateOrder()}> Confirm Order</button>
         </div>
         <div className="m-5 max-w-3xl ">
           {items.map((item) => {
@@ -47,7 +67,7 @@ const Cart = () => {
                 </div>
                 <div>
                   <button
-                    className=" m-3 px-4 btn btn-primary"
+                    className=" m-3 px-4 btn btn-danger"
                     onClick={() => handleDeleteCart(item.id)}
                   >
                     Remove

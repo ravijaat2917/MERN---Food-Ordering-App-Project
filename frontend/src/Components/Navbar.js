@@ -30,6 +30,9 @@ const Navbar = () => {
           >Cart
           </Badge>
         </Link>
+        <Link className="navLink mx-5 " to="/orders">
+          Orders
+        </Link>
         {/* <span className="cartCount mx-5">Cart items: {items.length}</span> */}
       </div>
     </div>

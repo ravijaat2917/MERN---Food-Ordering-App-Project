@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connectDB from "./Config/db.js";
 import path from 'path';
 import { fileURLToPath } from "url";
+import orderRoutes from './routes/order.Routes.js';
 
 // Rest object
 const app = express();
@@ -20,14 +21,16 @@ connectDB(process.env.DATABASE_URL);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// console.log(path.join(__dirname));
-app.use(express.static(path.join(__dirname,"./client/build")));
+
+// app.use(express.static(path.join(__dirname,"./frontend/build")));
+
+
+// app.use("*", function (req, res) {
+//   res.sendFile(path.join(__dirname,'./frontend/build/index.html'));
+// });
 
 // Routes
-
-app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname,'./client/build/index.html'));
-});
+app.use('/api/v1', orderRoutes);
 
 const PORT = process.env.PORT;
 // Listen Port
