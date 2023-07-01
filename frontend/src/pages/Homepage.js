@@ -1,88 +1,43 @@
-import React, { useState } from "react";
-import { items, burgers } from "../data/items";
-import { useDispatch } from "react-redux";
-import { add } from "../store/cartSlice";
+import React from "react";
+import { dishData } from "../data/inspirationOrderData";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
-  const dispatch = useDispatch();
-  const [category, setCategory] = useState("pizza");
-
-  const getCategory = () => {
-    const value = document.getElementById("select1").value;
-    setCategory(value);
-  };
-
-  const handleAddCart = (item) => {
-    console.log(item);
-    dispatch(add(item));
-  };
+  const navigate = useNavigate();
   return (
     <>
-      <div className="flex m-3 px-10 text-xl justify-center my-5">
-        <h2>Select Category</h2>
-        <select
-          onChange={() => getCategory()}
-          id="select1"
-          className="card mx-2"
-        >
-          <option value={"pizza"}>Pizza</option>
-          <option value={"burger"}>Burger</option>
-        </select>
+      <div className="md:px-20" style={{ backgroundColor: "#F8F8F8" }}>
+        <p className="md:text-4xl  text-center sm:text-left  text-xl font-normal font-serif pt-4 tracking-wider">
+          Inspiration for your first order
+        </p>
+        <div className="flex flex-wrap flex-row justify-between ">
+          {dishData.map((item) => {
+            return (
+              <div
+                onClick={() => navigate(`${item.link}`)}
+                className="mt-4 cursor-pointer w-15 sm:w-40"
+              >
+                <img
+                  src={item.img}
+                  alt={item.link}
+                  className="rounded-full w-20 sm:w-40"
+                />
+                <p className="text-center">{item.name}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
-
-      {category === "pizza" ? (
-        <div className=" md:mx-80  ">
-          {items.map((item) => {
-            return (
-              <div className="card m-2  flex-col justify-center md:flex-row  md:justify-between">
-                <div style={{ width: "130px", height: "130px" }}>
-                  <img className="w-full " src={item.img} />
-                </div>
-                <div className="justify-center flex-row m-3 md:justify-between md:w-2/3">
-                  <div className="wrap from-neutral-700 font-semibold">
-                    {item.name}
-                  </div>
-                  <div className=" font-bold py-1 ">₹ {item.price} </div>
-                </div>
-                <div>
-                  <button
-                    className=" m-3 px-4 btn btn-primary"
-                    onClick={() => handleAddCart(item)}
-                  >
-                    Add
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      ) : (
-        <div className="md:mx-80 ">
-          {burgers.map((item) => {
-            return (
-              <div className="card m-2 flex-col justify-center md:flex-row  md:justify-between">
-                <div style={{ width: "130px", height: "130px" }}>
-                  <img className="w-full " src={item.img} />
-                </div>
-                <div className="justify-center flex-row m-3 md:justify-between md:w-2/3">
-                  <div className="wrap from-neutral-700 font-semibold">
-                    {item.name}
-                  </div>
-                  <div className=" font-bold py-1 ">₹ {item.price} </div>
-                </div>
-                <div>
-                  <button
-                    className=" m-3 px-4 btn btn-primary"
-                    onClick={() => handleAddCart(item)}
-                  >
-                    Add
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
+      <div className="md:mx-60">
+        <p className="text-3xl font-normal font-serif mt-4 tracking-wider">
+          Top brands for you
+        </p>
+      </div>
+      <div className="md:mx-60">
+        <p className="text-3xl font-normal font-serif mt-4 tracking-wider">
+          Delivery Restaurants
+        </p>
+      </div>
     </>
   );
 };

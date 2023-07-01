@@ -17,7 +17,8 @@ const Navbar = () => {
       <span className="logo md:py-0 pb-7 text-4xl font-bold text-red-600 ">
         Zomato Lite
       </span>
-      <div>
+      <div >
+        <hr/>
         <Link className="navLink mr-5 " to="/">
           Home
         </Link>
@@ -34,6 +35,7 @@ const Navbar = () => {
         <Link className="navLink mr-5 ml-5 " to="/orders">
           Orders
         </Link>
+        <hr />
         {/* <span className="cartCount mx-5">Cart items: {items.length}</span> */}
       </div>
     </div>
