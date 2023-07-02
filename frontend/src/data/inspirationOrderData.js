@@ -30,7 +30,7 @@ export const dishData = [
         link:'thali'
     },{
         name: 'NorthIndian',
-        img: 'https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png',
-        link:'northindian'
+        img: 'https://b.zmtcdn.com/data/o2_assets/019409fe8f838312214d9211be010ef31678798444.jpeg',
+        link:'north indian'
     },
 ]

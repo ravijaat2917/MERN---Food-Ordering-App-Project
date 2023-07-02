@@ -3,6 +3,7 @@ import { dishData } from "../data/inspirationOrderData";
 import { useNavigate } from "react-router-dom";
 import BuyWithBrandName from "../Components/BuyWithBrandName";
 import BestFoodComponent from "../Components/BestFoodComponent";
+import { brandsItems } from "./../data/brandsLists";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -12,11 +13,11 @@ const Homepage = () => {
         <p className="sm:text-4xl  text-center sm:text-left  text-xl font-normal font-serif pt-4 tracking-wider">
           Inspiration for your first order
         </p>
-        <div className="flex flex-wrap flex-row justify-between ">
+        <div className="flex flex-wrap max-h-36 overflow-hidden sm:max-h-full flex-row justify-between ">
           {dishData.map((item) => {
             return (
               <div
-                onClick={() => navigate(`${item.link}`)}
+                onClick={() => navigate(`filter/item/${item.link}`)}
                 className="mt-4 cursor-pointer w-15 sm:w-40 hover:drop-shadow-xl"
               >
                 <img
@@ -31,7 +32,7 @@ const Homepage = () => {
         </div>
       </div>
       <BuyWithBrandName/>
-      <BestFoodComponent/>
+      <BestFoodComponent brandsItems={brandsItems}/>
     </>
   );
 };

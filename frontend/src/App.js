@@ -7,6 +7,8 @@ import Homepage from "./pages/Homepage";
 import Cart from "./pages/Cart";
 import OrdersPage from "./pages/OrdersPage";
 import Footer from "./Components/Footer";
+import SingleCategoryFood from "./pages/SingleCategoryFood";
+import SingleRestaurantPage from "./pages/SingleRestaurantPage";
 
 const App = () => {
   return (
@@ -18,8 +20,20 @@ const App = () => {
             <Route path="/" element={<Homepage />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/orders" element={<OrdersPage />} />
+            <Route
+              path="/filter/item/:category"
+              element={<SingleCategoryFood />}
+            />
+            <Route
+              path="/filter/restaurant/:name"
+              element={<SingleRestaurantPage />}
+            />
+            <Route
+              path="/filter/item/:category/filter/restaurant/:name"
+              element={<SingleRestaurantPage />}
+            />
           </Routes>
-          <Footer/>
+          <Footer />
         </BrowserRouter>
       </Provider>
     </div>

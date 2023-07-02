@@ -1,19 +1,20 @@
 import React from "react";
-import { brandsItems } from "../data/brandsLists";
+import { Link } from "react-router-dom";
 
-const BestFoodComponent = () => {
+const BestFoodComponent = ({ brandsItems }) => {
   return (
     <>
       <div className="md:mx-20">
         <p className="sm:text-4xl  text-center sm:text-left  text-xl font-normal font-serif pt-5 tracking-wider">
           Best Food Nearby You
         </p>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-row flex-wrap justify-center">
           {brandsItems.map((item) => {
             return (
-              <div
+              <Link
+                to={`filter/restaurant/${item.link}`}
                 style={{ borderRadius: "10px" }}
-                className="m-5 card w-fit drop-shadow-xl"
+                className=" m-4 sm:m-5 card w-fit drop-shadow-2xl sm:drop-shadow-xl hover:drop-shadow-2xl cursor-pointer"
               >
                 <div className=" ">
                   <img
@@ -46,18 +47,24 @@ const BestFoodComponent = () => {
                         maxHeight: "25px",
                         // textOverflow: "ellipsis",
                         lineHeight: "25px",
-                          overflow: "hidden",
-                        color:'gray'
+                        overflow: "hidden",
+                        color: "gray",
                       }}
                     >
-                      {item.tags +"..."}
-                            </span>
-                            <span style={{color:"grey" , fontSize:'14px' , paddingTop:'2px'}}>
-                                {item.price}
-                            </span>
+                      {item.tags + "..."}
+                    </span>
+                    <span
+                      style={{
+                        color: "grey",
+                        fontSize: "14px",
+                        paddingTop: "2px",
+                      }}
+                    >
+                      {item.price}
+                    </span>
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

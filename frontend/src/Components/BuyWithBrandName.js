@@ -10,12 +10,12 @@ const BuyWithBrandName = () => {
         <p className="sm:text-4xl  text-center sm:text-left  text-xl font-normal font-serif pt-5 tracking-wider">
           Top brands for you
                 </p>
-                <div className="flex px-4 sm:pt-4 flex-wrap flex-row justify-between ">
+                <div className="flex px-4  sm:pt-4 max-h-72 overflow-hidden sm:max-h-full flex-wrap flex-row justify-between ">
           {brands.map((item) => {
             return (
               <div
-                onClick={() => navigate(`${item.link}`)}
-                className="mt-4 cursor-pointer w-20 sm:w-30 mx-1 hover:drop-shadow-2xl drop-shadow-xl"
+                onClick={() => navigate(`filter/restaurant/${item.link}`)}
+                className="mt-4 hover:translate-y--3 cursor-pointer pb-2 w-20 sm:w-30 mx-1 hover:drop-shadow-2xl drop-shadow-xl"
               >
                 <img
                   src={item.img}
