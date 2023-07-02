@@ -58,63 +58,83 @@ export const brandsItems = [
     items: [
       {
         id: 1,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'Big Spicy Paneer Wrap',
+        des: 'Tender paneer patty with a fiery, crunchy batter coating, dressed with fresh veggies and seasonings, topped with creamy sauce and a dash of mustard and melted cheese.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/901/802b82218c9aef28be50dcd6d5213901.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:219
       },
       {
         id: 2,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'Medium Fries',
+        des:'World Famous Fries®. These epic, fan-favourite fries are crispy and golden on the outside and fluffy on the inside.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/4a4/a814fb4bb86e03304d279db7c8f284a4.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:105
       },
       {
         id: 3,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'Pizza McPuff',
+        des:'Blend of assorted vegetables [carrot, beans, capsicum, onion and green peas], mozzarella cheese mixed with tomato sauce and exotic spices stuffed in rectangle shaped savoury dough',
+        img: 'https://b.zmtcdn.com/data/dish_photos/4e5/eedaee6d702dbd6a2b36e3af3d6ee4e5.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:44,
       },
       {
         id: 4,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'McVeggie',
+        des:'A patty made of potatoes, peas, carrots, beans, onions, red capsicum and a selection of Indian spices, topped with crispy lettuce, mayonnaise, packed into sesame toasted buns.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/947/39b5cc059fa3d322b964bf88310f7947.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:106,
       },
       {
         id: 5,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'McAloo VM',
+        des:'A patty made of potatoes, peas, carrots, beans, onions, red capsicum and a selection of Indian spices, topped with crispy lettuce, mayonnaise, packed into sesame toasted buns.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/399/636cbc7a1657155434e5e1900ebd5399.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:109
       },
       {
         id: 6,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'Cold Coffee',
+        des:'A rich smooth creamy cold coffee made with coffee powder and milk.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/551/06d765f62c2d422b0642c7aeb5d26551.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:105
       },
       {
         id: 7,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'Big Spicy Chicken Wrap',
+        des:'Juicy chicken coated with hot and crispy batter, dressed with fresh salad of lettuce, onions, tomatoes and seasonings. Served with creamy sauce and supple cheese slices.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/050/f828d299c85374c6374c676c37b21050.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:226
       },
       {
         id: 8,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'McAloo Tikki Burger',
+        des:'A tikki delight: Potato and peas patty topped with veg sauce, ketchup, tomatoes and onions with toasted buns',
+        img: 'https://b.zmtcdn.com/data/dish_photos/2ac/03c10b0097d30e5fd485965c627d32ac.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:52
       }
       ,{
         id: 9,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'Veg Maharaja Mac',
+        des:'Big Mac sesame seeds bun, with rich and crusty cheesy corn patty, topped with chunky vegetable-cocktail sauce served with pungent jalapeño slices, red onion slices, tomato slices, Cheddar cheese slice and crisp iceberg lettuce.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/a36/66fc891f0259374e2f5b4ee5e9bcda36.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:215
       },
       {
         id: 10,
-        name: '',
-        des:'',
-        img: '',
+        link: "McDonald's",
+        name: 'McSpicy Paneer',
+        des:'Crispy and spicy paneer patty with creamy tandoori sauce and crispy lettuce topping.',
+        img: 'https://b.zmtcdn.com/data/dish_photos/896/db46bfa6121525dc8bc4d7214ee29896.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:180
       }
     ]
   },
@@ -127,65 +147,12 @@ export const brandsItems = [
     price: "₹ 100 for one",
     items: [
       {
-        id: 1,
-        name: '',
-        des:'',
-        img: '',
+        id: 11,
+        link: "Domino's Pizza",
+        name: 'Big Spicy Paneer Wrap',
+        img: 'https://b.zmtcdn.com/data/dish_photos/901/802b82218c9aef28be50dcd6d5213901.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
+        price:119
       },
-      {
-        id: 2,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 3,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 4,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 5,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 6,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 7,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 8,
-        name: '',
-        des:'',
-        img: '',
-      }
-      ,{
-        id: 9,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 10,
-        name: '',
-        des:'',
-        img: '',
-      }
     ]
   },
   {

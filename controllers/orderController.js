@@ -13,11 +13,12 @@ export const getOrdersController = async (req, res) => {
 
 export const createOrdersController = async (req, res) => {
   try {
-    const { items, total } = req.body;
+    const { items, totalAmount , totalItems } = req.body;
     // console.log(items);
     const order = await new orderModel({
       items: items,
-      total,
+      totalAmount,
+      totalItems
     }).save();
     res.status(201).send({ success: true, message: "Order Successfull" });
   } catch (error) {

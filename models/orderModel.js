@@ -6,9 +6,13 @@ const orderSchema = new mongoose.Schema(
       type: Array,
       required: true,
     },
-    total: {
+    totalAmount: {
       type: Number,
-      required:true
+      required: true,
+    },
+    totalItems: {
+      type: Number,
+      required: true,
     },
   },
   { timestamps: true }

@@ -10,6 +10,20 @@ const Cart = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart);
   const [total, setTotal] = useState(0);
+  const [cartItems, setCartItems] = useState();
+
+  function groupArrayByName() {
+    const groupedArray = {};
+    items.forEach((item) => {
+      const { link } = item;
+      if (groupedArray[link]) {
+        groupedArray[link].push(item);
+      } else {
+        groupedArray[link] = [item];
+      }
+    });
+    return Object.values(groupedArray);
+  }
 
   const handleDeleteCart = (item) => {
     dispatch(remove(item));
@@ -27,8 +41,9 @@ const Cart = () => {
   const handleCreateOrder = async () => {
     try {
       const res = await axios.post("/api/v1/create/order", {
-        items: items,
-        total: total,
+        items: cartItems,
+        totalAmount: total,
+        totalItems: items.length,
       });
       if (res.data.success === true) {
         navigate("/");
@@ -42,47 +57,55 @@ const Cart = () => {
 
   useEffect(() => {
     setTotal(getTotalAmount());
+    setCartItems(groupArrayByName());
   }, [items]);
   return (
     <>
-      <div>
-        <div className="m-10">
-          <p className="text-xl font-semibold">Checkout</p>
-
-          <p className="px-10 py-3 font-normal">Cart Value : {total}</p>
-          <button
-            className="btn btn-success"
-            onClick={() => handleCreateOrder()}
-          >
-            {" "}
-            Confirm Order
-          </button>
+      <div className="text-center">
+        <p className="text-2xl pt-5">Order Your Cart Items</p>
+        <div>
+          <p>Total Items : {items.length}</p>
+          <p>Total Amount : ₹ {total}</p>
         </div>
-        <div className="md:mx-80 ">
-          {items.map((item) => {
+        <button
+          onClick={() => handleCreateOrder()}
+          className="bg-green-700 rounded-md mt-2 py-2 px-5 font-semibold text-white"
+        >
+          Confirm Order
+        </button>
+      </div>
+
+      <div className="card border-5 rounded-md m-3 ">
+        {cartItems?.map((restaurant) => {
+          return (
+            <div className="card flex mx-1 my-1 sm:mx-80 p-2">
+              <p className="font-semibold flex justify-between"><span>From : {restaurant[0].link} </span><span>Items : { restaurant.length}</span></p>
+              <div className="flex justify-center flex-wrap">
+
+          
+          {restaurant?.map((item) => {
             return (
-              <div className="card m-2 flex-col justify-center md:flex-row  md:justify-between">
-                <div style={{ width: "130px", height: "130px" }}>
-                  <img className="w-full " src={item.img} />
-                </div>
-                <div className="justify-center flex-row m-3 md:justify-between md:w-2/3">
-                  <div className="wrap from-neutral-700 font-semibold">
-                    {item.name}
+              <>
+                <div className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start ">
+                  <div className=" items-center w-20 sm:px-0">
+                    <img className="w-20" src={item.img} alt={item.id} />
                   </div>
-                  <div className=" font-bold py-1 ">₹ {item.price} </div>
+                  <div>
+                    <p className="text-left pl-1">{item.name}</p>
+                    <p className="w-40 pl-1">₹ {item.price}</p>
+                    <div>
+
+                    <p onClick={()=> handleDeleteCart(item.id)} className=" py-1 cursor-pointer px-2 ml-1 text-right ">Remove</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <button
-                    className=" m-3 px-4 btn btn-danger"
-                    onClick={() => handleDeleteCart(item.id)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              </div>
+              </>
             );
           })}
-        </div>
+            </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );
