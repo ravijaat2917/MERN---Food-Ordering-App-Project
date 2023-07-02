@@ -32,7 +32,7 @@ const SingleRestaurantPage = () => {
         <p className='text-slate-500 px-3'>{restaurant?.tags}</p>
         <p className=' px-3 py-1 text-slate-600'>Delivered within 30 minutes <span className='text-red-500 border px-2 rounded-full'>&#x2713;</span> </p>
         <div className='px-3'>
-        <p className='pt-3 text-2xl text-slate-950'>Order Now </p>
+        <p className='pt-3 text-2xl text-red-400'>Order Now </p>
           <hr/>
         </div>
       </div>

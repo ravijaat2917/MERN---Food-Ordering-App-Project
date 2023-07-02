@@ -7,7 +7,7 @@ const Navbar = () => {
   const items = useSelector((state) => state.cart);
   return (
     <div
-      className="py-4 px-10  w-full md:flex-row flex-col bg-purple-300 "
+      className="py-4 px-10  w-full md:flex-row flex-col bg-purple-200 "
       style={{
         display: "flex",
         alignItems: "center",
