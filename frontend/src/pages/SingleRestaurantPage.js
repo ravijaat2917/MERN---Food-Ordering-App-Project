@@ -4,6 +4,7 @@ import { brandsItems } from "../data/brandsLists";
 import { useDispatch } from "react-redux";
 import { add } from "../store/cartSlice";
 import { pizzaSize } from "./../data/addons";
+import { description } from "./../data/addons";
 
 const SingleRestaurantPage = () => {
   const dispatch = useDispatch();
@@ -55,6 +56,8 @@ const SingleRestaurantPage = () => {
 
   return (
     <>
+      <button onClick={()=> window.history.back() } className=" mx-3 rounded-md text-white sm:ml-14 mt-2 sm:mt-20 px-3 py-2 bg-slate-500" >Back</button>
+      
       <div className="mt-8 px-2  sm:mx-28">
         <p className="text-2xl sm:text-4xl font-semibold tracking-wide sm:tracking-widest flex justify-between px-3 pt-3">
           <span className="py-1 text-3xl sm:text-4xl text-slate-800">
@@ -109,6 +112,7 @@ const SingleRestaurantPage = () => {
                                         {" "}
                                         ₹ {size.price * item.price}
                                       </span>
+                                      
                                     </p>
                                   </option>
                                 </>
@@ -123,6 +127,7 @@ const SingleRestaurantPage = () => {
                             />
                             Add Extra Cheese ₹ 30
                           </div>
+                          {/* <span style={{display:'block',maxWidth:'180px'}}>{description}</span> */}
                           <div>
                             <p
                               onClick={() =>

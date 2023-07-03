@@ -61,18 +61,28 @@ const Cart = () => {
   }, [items]);
   return (
     <>
+      <button onClick={()=> window.history.back() } className=" mx-3 rounded-md text-white sm:ml-14 mt-2 sm:mt-20 px-3 py-2 bg-slate-500" >Back</button>
+      
       <div className="text-center">
         <p className="text-2xl pt-5">Order Your Cart Items</p>
         <div>
           <p>Total Items : {items.length}</p>
           <p>Total Amount : ₹ {total}</p>
         </div>
-        <button
+        {items.length ? (<button
           onClick={() => handleCreateOrder()}
           className="bg-green-700 rounded-md mt-2 py-2 px-5 font-semibold text-white"
         >
           Confirm Order
+        </button>) : 
+          (
+            <button
+          onClick={() => navigate('/')}
+          className="bg-green-700 rounded-md mt-2 py-2 px-5 font-semibold text-white"
+        >
+          Find Food and Add
         </button>
+        )}
       </div>
 
       <div className="card border-5 rounded-md m-3 ">

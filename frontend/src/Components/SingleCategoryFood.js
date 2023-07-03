@@ -5,8 +5,10 @@ const SingleCategoryFood = ({ brandsItems, heading, category }) => {
   const navigate = useNavigate();
   return (
     <>
+      <button onClick={()=> window.history.back() } className=" mx-3 rounded-md text-white sm:ml-14 mt-2 sm:mt-20 px-3 py-2 bg-slate-500" >Back</button>
       <div className="md:mx-20">
-        <p className="sm:text-4xl  text-center sm:text-left  text-xl font-normal font-serif pt-5 tracking-wider">
+        
+        <p className="sm:text-4xl  text-center sm:text-left  text-xl font-normal font-serif pt-1 tracking-wider">
           {heading}
         </p>
         <div className="flex flex-row flex-wrap justify-center">

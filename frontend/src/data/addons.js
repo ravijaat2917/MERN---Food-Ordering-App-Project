@@ -18,3 +18,5 @@ export const pizzaSize = [
     price: 2,
   },
 ];
+
+export const description = 'Indian cottage cheese, cooked in Indian wok, blended with green bell pepper, onion and aromatic spices.'
