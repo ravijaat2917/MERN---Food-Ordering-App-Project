@@ -149,9 +149,64 @@ export const brandsItems = [
       {
         id: 11,
         link: "Domino's Pizza",
-        name: 'Big Spicy Paneer Wrap',
-        img: 'https://b.zmtcdn.com/data/dish_photos/901/802b82218c9aef28be50dcd6d5213901.png?output-format=webp&fit=around|130:130&crop=130:130;*,*',
-        price:119
+        name: 'Fiery Jalapeno & Paprika',
+        img: 'https://b.zmtcdn.com/data/dish_photos/e4e/825cf2e2e5851112830ac5beb5f1fe4e.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:179
+      },
+      {
+        id: 12,
+        link: "Domino's Pizza",
+        name: 'Farmhouse Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/68d/f7ef8df0fed856ee03c983f156fbb68d.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:269
+      },{
+        id: 13,
+        link: "Domino's Pizza",
+        name: 'Veg Extravaganza Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/3f5/b337ca46e24a31366f59f64d3ad923f5.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:319
+      },{
+        id: 14,
+        link: "Domino's Pizza",
+        name: 'Blazing Chicken Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/b37/abb475762834411a25fdd6396e73cb37.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:249
+      },{
+        id: 15,
+        link: "Domino's Pizza",
+        name: 'The 5 Chicken Feast Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/4e2/f3b7422765e4b85e212099c3e4ded4e2.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:399
+      },{
+        id: 16,
+        link: "Domino's Pizza",
+        name: 'Blazing Onion & Paprika',
+        img: 'https://b.zmtcdn.com/data/dish_photos/b41/3e7499b579521f6acf7f4dbebb374b41.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:179
+      },{
+        id: 17,
+        link: "Domino's Pizza",
+        name: 'Peppy Paneer Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/97c/81fbe5f6e8576cc7bdae699c3900197c.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:269
+      },{
+        id: 18,
+        link: "Domino's Pizza",
+        name: 'Indi Tandoori Paneer Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/8d3/3f7b4790495d3ad00cc5de3c40edb8d3.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:319
+      },{
+        id: 19,
+        link: "Domino's Pizza",
+        name: 'Veg Extravaganza Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/3f5/b337ca46e24a31366f59f64d3ad923f5.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:399
+      },{
+        id: 20,
+        link: "Domino's Pizza",
+        name: 'Veggie Paradise Pizza',
+        img: 'https://b.zmtcdn.com/data/dish_photos/131/d256f07dc0da10e511f6442ee0886131.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:269
       },
     ]
   },
@@ -164,65 +219,67 @@ export const brandsItems = [
     tags: "Burger, Fast Food, Desserts, Shake",
     items: [
       {
-        id: 1,
-        name: '',
-        des:'',
-        img: '',
+        id: 21,
+        link: "Burger King",
+        name: 'Crispy Veg Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/0cf/07ddcab35ed27c8c48fa01cb067690cf.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:70
       },
       {
-        id: 2,
-        name: '',
-        des:'',
-        img: '',
+        id: 22,
+        link: "Burger King",
+        name: 'Paneer Royale Wrap',
+        img: 'https://b.zmtcdn.com/data/dish_photos/343/ac57be9fa688f3c2ac5833cd97bb3343.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:209
+      },{
+        id: 23,
+        link: "Burger King",
+        name: 'Chicken Makhani Burst Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/7e8/d8869520179ee3e22d588a556c61d7e8.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:100
+      },{
+        id: 24,
+        link: "Burger King",
+        name: 'Crispy Chicken Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/957/f9d83b27d2454b0ba0f6749b65486957.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:90
+      },{
+        id: 25,
+        link: "Burger King",
+        name: 'Veg Makhani Burst Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/f20/b7fc09ab3b6c460cea93ee6d25878f20.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:80
+      },{
+        id: 26,
+        link: "Burger King",
+        name: 'Crispy Veg Double Patty Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/2c2/84141e2a24ec756aba4880eacf1ce2c2.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:95
+      },{
+        id: 27,
+        link: "Burger King",
+        name: 'Crispy veg with Cheese Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/66a/9996feeca0f95cff307c9e0a3600b66a.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:95
+      },{
+        id: 28,
+        link: "Burger King",
+        name: 'Crispy Chicken with Cheese Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/444/c8575f7682592d31fe6bfdbdb961b444.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:115
+      },{
+        id: 29,
+        link: "Burger King",
+        name: 'BK Veggie Burger',
+        img: 'https://b.zmtcdn.com/data/dish_photos/627/9a88d4034b161588f43e84c7f189d627.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:119
+      },{
+        id: 30,
+        link: "Burger King",
+        name: 'Crispy Veg Double Patty with Cheese',
+        img: 'https://b.zmtcdn.com/data/dish_photos/8ac/d389685a0b5f51811971fbbae60ff8ac.jpg?fit=around|130:130&crop=130:130;*,*',
+        price:124
       },
-      {
-        id: 3,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 4,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 5,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 6,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 7,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 8,
-        name: '',
-        des:'',
-        img: '',
-      }
-      ,{
-        id: 9,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 10,
-        name: '',
-        des:'',
-        img: '',
-      }
     ]
   },
   {
@@ -234,65 +291,66 @@ export const brandsItems = [
     tags: "Burger, Fast Food, Biryani, Desserts, Beverages",
     items: [
       {
-        id: 1,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 2,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
         id: 3,
+        link: "KFC",
         name: '',
-        des:'',
         img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
+      },{
+        id: 3,
+        link: "KFC",
+        name: '',
+        img: '',
+        price:179
       },
-      {
-        id: 4,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 5,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 6,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 7,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 8,
-        name: '',
-        des:'',
-        img: '',
-      }
-      ,{
-        id: 9,
-        name: '',
-        des:'',
-        img: '',
-      },
-      {
-        id: 10,
-        name: '',
-        des:'',
-        img: '',
-      }
     ]
   },
   {
