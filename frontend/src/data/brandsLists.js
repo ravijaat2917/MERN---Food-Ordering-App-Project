@@ -152,6 +152,7 @@ export const brandsItems = [
         name: "Fiery Jalapeno & Paprika",
         img: "https://b.zmtcdn.com/data/dish_photos/e4e/825cf2e2e5851112830ac5beb5f1fe4e.jpg?fit=around|130:130&crop=130:130;*,*",
         price: 179,
+        type:'pizza'
       },
       {
         id: 12,
@@ -159,6 +160,7 @@ export const brandsItems = [
         name: "Farmhouse Pizza",
         img: "https://b.zmtcdn.com/data/dish_photos/68d/f7ef8df0fed856ee03c983f156fbb68d.jpg?fit=around|130:130&crop=130:130;*,*",
         price: 269,
+        type:'pizza'
       },
       {
         id: 13,

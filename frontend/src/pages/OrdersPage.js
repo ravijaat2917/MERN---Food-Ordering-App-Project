@@ -97,9 +97,18 @@ const OrdersPage = () => {
                               <div className="w-12 ml-2">
                                 <img src={item.img} alt={item.name}></img>
                               </div>
-                              <div className="py-3 pl-2 w-3/5 block overflow-hidden max-h-10">
+                              {item.extra ? (
+                                <>
+                                <div className="py-1 pl-2 w-3/5 ">
+                                <p className="">{item.name}</p>
+                                {item.extra? (<p>{ item.extra}</p>) : ('')}
+                              </div></>
+                              ) : (
+                                <div className="py-3 pl-2 w-3/5 block overflow-hidden max-h-10">
                                 <p>{item.name}</p>
-                              </div>
+                              </div>     
+                              )}
+                              
                               <div className="py-3 pr-2 text-right">
                                 <p>₹ {item.price}</p>
                               </div>
