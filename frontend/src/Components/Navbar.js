@@ -18,24 +18,22 @@ const Navbar = () => {
         Let's Order Something Tasty
       </span>
       <div >
-        <hr/>
-        <Link className="navLink mr-5 " to="/">
+        <Link className="navLink  border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 " to="/">
           Home
         </Link>
-        <Link className="navLink mr-5 ml-5" to="/cart">
+        <Link className="navLink border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 " to="/cart">
           <Badge
             count={items.length}
-            className="font-semi-bold"
-            offset={[15, -1]}
+            className="text-xl"
+            offset={[10, -8]}
             size="12px"
           >
             Cart
           </Badge>
         </Link>
-        <Link className="navLink mr-5 ml-5 " to="/orders">
+        <Link className="navLink border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 " to="/orders">
           Orders
         </Link>
-        <hr />
         {/* <span className="cartCount mx-5">Cart items: {items.length}</span> */}
       </div>
     </div>
