@@ -146,7 +146,9 @@ const SingleRestaurantPage = () => {
                         </>
                       ) : (
                         <>
-                          <p className="w-40 pl-1 mb-1">₹ {item.price} </p>
+                            <p className="w-40 pl-1 mb-1">₹ {item.price} </p>
+                          <span className="py-1" style={{display:'block',maxWidth:'250px'}}><span className="font-semibold">Description : </span> {description}</span>
+                            
                           <div>
                             <p
                               onClick={() => additemToCart(item)}
