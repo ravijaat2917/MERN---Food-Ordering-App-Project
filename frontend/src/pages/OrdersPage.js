@@ -9,58 +9,113 @@ const OrdersPage = () => {
       const res = await axios.get("/api/v1/get/orders");
       if (res.data.success) {
         setOrders(res.data.orders);
+        console.log(res.data.orders);
       }
     } catch (error) {
       console.log(error);
     }
   };
 
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
   useEffect(() => {
     getOrders();
   }, []);
 
   return (
-    <>
-      <h4 className="text-3xl p-2 text-center from-neutral-800 font-semibold">
-        {" "}
-        All Orders
-      </h4>
+    <div
+      className="flex sm:mx-20  lg:mx-40  xl:mx-96  flex-col justify-center "
+      style={{ minHeight: "80vh" }}
+    >
+      <div>
+        <h4 className="text-3xl p-2 mt-5 text-center my-3 sm:text-left from-neutral-800 font-semibold">
+          {" "}
+          All Orders
+        </h4>
+      </div>
       <div
-        className="md:mx-80  flex flex-col justify-center"
-        style={{ display: "flex", justifyContent: "center" }}
+        className=" mb-10"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignContent: "center",
+        }}
       >
         {orders?.map((order) => {
           return (
-            <div className="card max-w-x px-3 md:px-7  py-2 m-3 ">
-              <p className="flex justify-between">
-                <span className="font-semibold">
-                  Ordered on: {order.createdAt.slice(0, 10)}{" "}
-                </span>{" "}
-                <span className="font-semibold">
-                  Total Amount: ₹ {order.total}
-                </span>
-              </p>
-              <p>Total Items : {order.items.length}</p>
-              {order.items.map((item) => {
-                return (
-                  <div className="card m-2 flex-row justify-start md:flex-row  md:justify-between">
-                    <div style={{ width: "50px", height: "50px" }}>
-                      <img style={{ width: "70px" }} src={item.img} />
-                    </div>
-                    <div className="justify-start flex-col mx-1 text-ellipsis  md:w-4/5 md:text-left">
-                      <div className="wrap block from-neutral-700 font-normal text-ellipsis">
-                        {item.name}
+            <div
+              className="card mb-3 border-2 shadow-xl m-4 sm:mx-10 p-2"
+              // style={{ maxWidth: "550px" }}
+              key={order._id}
+            >
+              <div>
+                <p className="flex justify-between px-2">
+                  <span className="text-md ">
+                    {" "}
+                    <span className="font-semibold">Ordered on </span>
+                    {order.createdAt.slice(0, 10)}
+                  </span>
+                  <span className="text-md ">
+                    {" "}
+                    <span className="font-semibold">Total Items </span>
+                    {order.totalItems}
+                  </span>
+                </p>
+
+                <p className="flex justify-between px-2 py-1">
+                  <span className="text-md ">
+                    {" "}
+                    <span className="font-semibold">Delivered in </span>
+                    {order.deliveryTime ? (
+                      <>{order.deliveryTime}</>
+                    ) : (
+                      getRndInteger(10, 29)
+                    )}{" "}
+                    min.
+                  </span>
+                  <span>
+                    {" "}
+                    <span className="font-semibold">Total Amount </span>₹{" "}
+                    {order.totalAmount}
+                  </span>
+                </p>
+              </div>
+              <div className="">
+                {order.items.map((items) => {
+                  return (
+                    <div className="card p-1 m-1 ">
+                      <p className="flex justify-between px-2 py-1">
+                        <span>From : {items[0].link}</span>
+                        <span>Items : {items.length}</span>
+                      </p>
+                      <div>
+                        {items.map((item) => {
+                          return (
+                            <div className="flex w-full justify-between">
+                              <div className="w-12 ml-2">
+                                <img src={item.img} alt={item.name}></img>
+                              </div>
+                              <div className="py-3 pl-2 w-3/5 block overflow-hidden max-h-10">
+                                <p>{item.name}</p>
+                              </div>
+                              <div className="py-3 pr-2 text-right">
+                                <p>₹ {item.price}</p>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
-                      <div className=" font-semibold  ">₹ {item.price} </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
