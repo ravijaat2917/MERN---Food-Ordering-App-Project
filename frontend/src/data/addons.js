@@ -11,11 +11,11 @@ export const pizzaSize = [
   },
   {
     name: "Large",
-    price: 1.5,
+    price: 1.3,
   },
   {
     name: "Extra-Large",
-    price: 2,
+    price: 1.6,
   },
 ];
 

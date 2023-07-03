@@ -110,7 +110,7 @@ const SingleRestaurantPage = () => {
                                       <span>{size.name} </span>
                                       <span className="font-semibold ">
                                         {" "}
-                                        ₹ {size.price * item.price}
+                                        ₹ {Math.round(size.price * item.price)}
                                       </span>
                                       
                                     </p>
@@ -119,7 +119,7 @@ const SingleRestaurantPage = () => {
                               );
                             })}
                           </select>
-                          <div>
+                          <div className="py-1">
                             <input
                               type="checkbox"
                               name={`${item.name}`}
@@ -127,7 +127,7 @@ const SingleRestaurantPage = () => {
                             />
                             Add Extra Cheese ₹ 30
                           </div>
-                          {/* <span style={{display:'block',maxWidth:'180px'}}>{description}</span> */}
+                          <span style={{display:'block',maxWidth:'250px'}}><span className="font-semibold">Description : </span> {description}</span>
                           <div>
                             <p
                               onClick={() =>
@@ -137,11 +137,12 @@ const SingleRestaurantPage = () => {
                                   document.getElementsByName(`${item.name}`)
                                 )
                               }
-                              className="btn btn-secondary py-1 px-2 ml-1 text-right "
+                              className="btn btn-secondary py-1 px-2 ml-0 text-right "
                             >
                               Add
                             </p>
                           </div>
+                          
                         </>
                       ) : (
                         <>
