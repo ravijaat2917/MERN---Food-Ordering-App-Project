@@ -21,7 +21,7 @@ const SingleRestaurantPage = () => {
 
   const handleAddToCart = (item) => {
     dispatch(add(item));
-  }
+  };
 
   useEffect(() => {
     getRestaurantDetails();
@@ -51,28 +51,30 @@ const SingleRestaurantPage = () => {
           <p className="pt-3 text-2xl text-red-400">Order Now </p>
           <hr />
           <div className="flex justify-center flex-wrap">
-
-          
-          {restaurant?.items.map((item) => {
-            return (
-              <>
-                <div className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start ">
-                  <div className=" items-center w-20 sm:px-0">
-                    <img className="w-20" src={item.img} alt={item.id} />
-                  </div>
-                  <div>
-                    <p className="text-left pl-1">{item.name}</p>
-                    <p className="w-40 pl-1">₹ {item.price}</p>
+            {restaurant?.items.map((item) => {
+              return (
+                <>
+                  <div className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start ">
+                    <div className=" items-center w-20 sm:px-0">
+                      <img className="w-20" src={item.img} alt={item.id} />
+                    </div>
                     <div>
-
-                    <p onClick={()=> handleAddToCart(item)} className="btn btn-secondary py-1 px-2 ml-1 text-right ">Add</p>
+                      <p className="text-left pl-1">{item.name}</p>
+                      <p className="w-40 pl-1">₹ {item.price}</p>
+                      <div>
+                        <p
+                          onClick={() => handleAddToCart(item)}
+                          className="btn btn-secondary py-1 px-2 ml-1 text-right "
+                        >
+                          Add
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </>
-            );
-          })}
-            </div>
+                </>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

@@ -16,11 +16,11 @@ const SingleCategoryFood = ({ brandsItems, heading, category }) => {
             if (tags.includes(category)) {
               return (
                 <div
-                onClick={() => navigate(`filter/restaurant/${item.link}`)}
+                  onClick={() => navigate(`filter/restaurant/${item.link}`)}
                   style={{ borderRadius: "10px" }}
                   className=" m-4 sm:m-5 card w-fit drop-shadow-2xl sm:drop-shadow-xl hover:drop-shadow-2xl cursor-pointer"
                 >
-                  <div >
+                  <div>
                     <img
                       style={{
                         width: "350px",
@@ -70,8 +70,7 @@ const SingleCategoryFood = ({ brandsItems, heading, category }) => {
                   </div>
                 </div>
               );
-            } 
-            
+            }
           })}
         </div>
       </div>

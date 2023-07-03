@@ -17,24 +17,32 @@ const Navbar = () => {
       <span className=" logo md:py-0 pb-7 text-4xl font-bold text-red-600 ">
         Let's Order Something Tasty
       </span>
-      <div >
-        <Link className="navLink  border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 " to="/">
+      <div>
+        <Link
+          className="navLink  border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 "
+          to="/"
+        >
           Home
         </Link>
-        <Link className="navLink border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 " to="/cart">
+        <Link
+          className="navLink border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 "
+          to="/cart"
+        >
           <Badge
             count={items.length}
-            className="text-xl"
+            className="text-xl hover:text-white"
             offset={[10, -8]}
             size="12px"
           >
             Cart
           </Badge>
         </Link>
-        <Link className="navLink border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 " to="/orders">
+        <Link
+          className="navLink border-2 border-black p-2 rounded-md text-xl font-semibold hover:text-white hover:bg-black mr-5 "
+          to="/orders"
+        >
           Orders
         </Link>
-        {/* <span className="cartCount mx-5">Cart items: {items.length}</span> */}
       </div>
     </div>
   );

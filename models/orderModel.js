@@ -16,8 +16,8 @@ const orderSchema = new mongoose.Schema(
     },
     deliveryTime: {
       type: Number,
-      required:true
-    }
+      required: true,
+    },
   },
   { timestamps: true }
 );

@@ -79,30 +79,35 @@ const Cart = () => {
         {cartItems?.map((restaurant) => {
           return (
             <div className="card flex mx-1 my-1 sm:mx-80 p-2">
-              <p className="font-semibold flex justify-between"><span>From : {restaurant[0].link} </span><span>Items : { restaurant.length}</span></p>
+              <p className="font-semibold flex justify-between">
+                <span>From : {restaurant[0].link} </span>
+                <span>Items : {restaurant.length}</span>
+              </p>
               <div className="flex justify-center flex-wrap">
-
-          
-          {restaurant?.map((item) => {
-            return (
-              <>
-                <div className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start ">
-                  <div className=" items-center w-20 sm:px-0">
-                    <img className="w-20" src={item.img} alt={item.id} />
-                  </div>
-                  <div>
-                    <p className="text-left pl-1">{item.name}</p>
-                    <p className="w-40 pl-1">₹ {item.price}</p>
-                    <div>
-
-                    <p onClick={()=> handleDeleteCart(item.id)} className=" py-1 cursor-pointer px-2 ml-1 text-right ">Remove</p>
-                    </div>
-                  </div>
-                </div>
-              </>
-            );
-          })}
-            </div>
+                {restaurant?.map((item) => {
+                  return (
+                    <>
+                      <div className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start ">
+                        <div className=" items-center w-20 sm:px-0">
+                          <img className="w-20" src={item.img} alt={item.id} />
+                        </div>
+                        <div>
+                          <p className="text-left pl-1">{item.name}</p>
+                          <p className="w-40 pl-1">₹ {item.price}</p>
+                          <div>
+                            <p
+                              onClick={() => handleDeleteCart(item.id)}
+                              className=" py-1 cursor-pointer px-2 ml-1 text-right "
+                            >
+                              Remove
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
             </div>
           );
         })}

@@ -31,8 +31,8 @@ const Homepage = () => {
           })}
         </div>
       </div>
-      <BuyWithBrandName/>
-      <BestFoodComponent brandsItems={brandsItems}/>
+      <BuyWithBrandName />
+      <BestFoodComponent brandsItems={brandsItems} />
     </>
   );
 };
