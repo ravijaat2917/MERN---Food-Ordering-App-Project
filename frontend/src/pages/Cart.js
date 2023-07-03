@@ -102,7 +102,7 @@ const Cart = () => {
                           <img className="w-20" src={item.img} alt={item.id} />
                         </div>
                         <div>
-                          <p className="text-left pl-1">{item.name}</p>
+                          <p className="text-left pl-1 font-bold">{item.name}</p>
                           {item.extra?(<p className="text-left pl-1">{item.extra} </p>):('')}
                           <p className="text-left pl-1"></p>
                           <p className="w-40 pl-1">₹ {item.price}</p>

@@ -103,7 +103,7 @@ const OrdersPage = () => {
                                 {item.extra ? (
                                   <>
                                     <div className="py-1 pl-2 w-3/5 ">
-                                      <p className="">{item.name}</p>
+                                      <p className="font-semibold">{item.name}</p>
                                       {item.extra ? <p>{item.extra}</p> : ""}
                                     </div>
                                   </>

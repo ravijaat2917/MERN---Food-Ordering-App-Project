@@ -91,7 +91,7 @@ const SingleRestaurantPage = () => {
                       <img className="w-20" src={item.img} alt={item.id} />
                     </div>
                     <div className="ml-4">
-                      <p className="text-left pl-1">{item.name}</p>
+                      <p className="text-left pl-1 font-bold">{item.name}</p>
 
                       {/* <p className="w-40 pl-1">₹ {item.price} </p> */}
 
