@@ -102,18 +102,19 @@ const OrdersPage = () => {
                                 </div>
                                 {item.extra ? (
                                   <>
-                                    <div className="py-1 pl-2 w-3/5 ">
+                                    <div className="py-1 pl-2 w-3/5 pb-5">
                                       <p className="font-semibold">{item.name}</p>
-                                      {item.extra ? <p>{item.extra}</p> : ""}
+                                      {item.extra ? <p className="absolute ">{item.extra}</p> : ""}
                                     </div>
                                   </>
                                 ) : (
-                                  <div className="py-3 pl-2 w-3/5 block overflow-hidden max-h-10">
-                                    <p>{item.name}</p>
-                                  </div>
+                                  <div className="py-1 pl-2 w-3/5 ">
+                                      <p className="font-semibold">{item.name}</p>
+                                      {item.extra ? <p>{item.extra}</p> : ""}
+                                    </div>
                                 )}
 
-                                <div className="py-3 pr-2 text-right">
+                                <div className="py-3 pr-2 min-w-fit text-right">
                                   <p>₹ {item.price}</p>
                                 </div>
                               </div>
