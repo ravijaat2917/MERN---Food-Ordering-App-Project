@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { brandsItems } from "../data/brandsLists";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import { add } from "../store/cartSlice";
 import { pizzaSize } from "./../data/addons";
 import { description } from "./../data/addons";
+import { Allitems } from "../data/items";
+import { message } from "antd";
 
 const SingleRestaurantPage = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const restaurantName = params.name;
+  const cart = useSelector((state) => state.cart);
 
   const [restaurant, setRestaurant] = useState();
 
@@ -38,16 +41,26 @@ const SingleRestaurantPage = () => {
     }
     item = {
       ...item,
+      link:params.name,
       size: size,
+      id:cart.length+1 ,
       price: price,
       name: item.name + " ( " + arr[0] + " ) ",
     };
-    console.log(item);
+    // console.log(item);
     dispatch(add(item));
+    message.success('Item Added Successfully')
+
   };
 
   const additemToCart = (item) => {
+    item = {
+      ...item,
+      id:cart.length+1 ,
+      link: restaurantName
+    }
     dispatch(add(item));
+    message.success('Item Added Successfully')
   };
 
   useEffect(() => {
@@ -80,9 +93,10 @@ const SingleRestaurantPage = () => {
           <p className="pt-3 text-2xl text-red-400">Order Now </p>
           <hr />
           <div className="flex justify-center flex-wrap">
-            {restaurant?.items.map((item) => {
+            {Allitems?.map((item) => {
               return (
-                <>
+                params.category === item.type ? (
+                  <>
                   <div
                     key={item.name}
                     className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start "
@@ -160,10 +174,101 @@ const SingleRestaurantPage = () => {
                         </>
                       )}
                     </div>
-                  </div>
-                </>
-              );
+                    </div>
+                  </>
+                ) : (
+                    ''
+                ) 
+              )
             })}
+
+<>
+                      {Allitems.map((item) => {
+                        return (
+                          <>
+                            <div
+                    key={item.name}
+                    className="card p-2 sm:p-4 m-3 flex flex-row sm:flex-row align-center sm:justify-start "
+                  >
+                    <div className=" items-center w-20 sm:px-0">
+                      <img className="w-20" src={item.img} alt={item.id} />
+                    </div>
+                    <div className="ml-4">
+                      <p className="text-left pl-1 font-bold">{item.name}</p>
+
+                      {/* <p className="w-40 pl-1">₹ {item.price} </p> */}
+
+                      {item.type === "pizza" ? (
+                        <>
+                          <select
+                            id={item.name}
+                            key={item.name}
+                            className=" mt-2"
+                          >
+                            {pizzaSize.map((size) => {
+                              return (
+                                <>
+                                  <option>
+                                    <p>
+                                      <span>{size.name} </span>
+                                      <span className="font-semibold ">
+                                        {" "}
+                                        ₹ {Math.round(size.price * item.price)}
+                                      </span>
+                                      
+                                    </p>
+                                  </option>
+                                </>
+                              );
+                            })}
+                          </select>
+                          <div className="py-1">
+                            <input
+                              type="checkbox"
+                              name={`${item.name}`}
+                              value={30}
+                            />
+                            Add Extra Cheese ₹ 30
+                          </div>
+                          <span style={{display:'block',maxWidth:'250px'}}><span className="font-semibold">Description : </span> {description}</span>
+                          <div>
+                            <p
+                              onClick={() =>
+                                handleAddToCart(
+                                  item,
+                                  document.getElementById(`${item.name}`).value,
+                                  document.getElementsByName(`${item.name}`)
+                                )
+                              }
+                              className="btn btn-secondary py-1 px-2 ml-0 text-right "
+                            >
+                              Add
+                            </p>
+                          </div>
+                          
+                        </>
+                      ) : (
+                        <>
+                            <p className="w-40 pl-1 mb-1">₹ {item.price} </p>
+                          <span className="py-1" style={{display:'block',maxWidth:'250px'}}><span className="font-semibold">Description : </span> {description}</span>
+                            
+                          <div>
+                            <p
+                              onClick={() => additemToCart(item)}
+                              className="btn btn-secondary py-1 px-2 ml-1 text-right "
+                            >
+                              Add
+                            </p>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    </div>
+                            </>
+                        )
+                       })}
+                    </>
+            
           </div>
         </div>
       </div>
